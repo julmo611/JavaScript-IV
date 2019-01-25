@@ -20,7 +20,7 @@ class Instructor extends Person {
            this.catchPhrase = instattributes.catchPhrase;
     }
     demo(subject) {
-        return `Today we are learning about ${this.subject}`
+        return `Today we are learning about ${subject}`
     }
     grade(student, subject) {
         return `${this.name} receives a perfect score on ${this.subject}`
@@ -39,10 +39,10 @@ class Student extends Person {
         return `${this.favSubjects} `;
     }
     PRAssignment(subject) {
-        return `${this.name} has submitted a PR for ${this.subject}`
+        return `${name} has submitted a PR for ${subject}`
     }
     sprintChallenge(subject) {
-        return `${this.name} has begun sprint challenge on ${this.subject}`
+        return `${name} has begun sprint challenge on ${subject}`
     }
 
 }
@@ -55,14 +55,12 @@ class ProjectManager extends Person {
         this.favInstructor  = pmattributes.favInstructor;
     }
     standUp(channel) {
-        return `${this.name} announces to ${this.channel}, @channel standy times!​​​​​`;
+        return `${this.name} announces to ${channel}, @channel standy times!​​​​​`;
     }
-    debugsCode(subject) {
-        return `${this.name} debugs ${this.student.name}'s code on ${this.subject}`;
+    debugsCode(subject,student) {
+        return `${this.name} debugs ${name}'s code on ${subject}`;
     }
 }
-
-
 
 
 const david = new Person({
@@ -72,7 +70,6 @@ const david = new Person({
     gender: 'male',
   });
   
-  
   const josh = new Instructor ({
     name: 'Josh-two',
     location: 'far Away',
@@ -80,7 +77,8 @@ const david = new Person({
     gender: 'male',
     favLanguage: "JavaScript, Python, React",
     specialty: "Redux",
-    catchPhrase: "yaba yaba doo"
+    catchPhrase: "yaba yaba doo",
+    subject: "Ruby"
   });
   
   const julian = new Student ({
@@ -94,12 +92,13 @@ const david = new Person({
   });
   
   const jake = new ProjectManager ({
-      name: 'Jake-Two',
+    name: 'Jake-Two',
     location: 'Utha',
     age: 28,
     gender: 'male',
     gradClassName: "Lambda",
-    favInstructor: "Instructor Josh"
+    favInstructor: "Instructor Josh",
+    channel: "Fun channel"
   });
 
 
@@ -113,6 +112,6 @@ console.log(jake.favInstructor);
 console.log(julian.PRAssignment('Phyton'));
 console.log(julian.sprintChallenge('React'));
 console.log(jake);
-console.log(jake,debugsCode('Julian', 'JavaScript'));
-console.log(jake.standUp());
+console.log(jake.debugsCode('JAVASCRIPT IV'));
+console.log(jake.standUp('web17_Jake'));
 console.log(josh.demo('JavaScript IV'));
