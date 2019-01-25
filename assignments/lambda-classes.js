@@ -78,8 +78,7 @@ const david = new Person({
     favLanguage: "JavaScript, Python, React",
     specialty: "Redux",
     catchPhrase: "yaba yaba doo",
-    subject: "Ruby"
-  });
+ });
   
   const julian = new Student ({
     name: 'Julian',
@@ -98,7 +97,6 @@ const david = new Person({
     gender: 'male',
     gradClassName: "Lambda",
     favInstructor: "Instructor Josh",
-    channel: "Fun channel"
   });
 
 
